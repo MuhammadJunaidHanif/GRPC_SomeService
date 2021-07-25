@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "SomeService.Protos";
+
+service SomeServiceApi {
+	
+	rpc AddNumbers (AddNumbersRequest) returns (AddNumbersResponse);
+
+	rpc AddNumbersFromArray (AddNumbersFromArrayRequest) returns (AddNumbersFromArrayResponse);
+}
+
+message AddNumbersRequest {
+	int32 NumA = 1;
+	int32 NumB = 2;
+}
+
+message AddNumbersResponse {
+	int32 Sum = 1;
+}
+
+
+message AddNumbersFromArrayRequest {
+	repeated int32 Numbers = 1;
+}
+
+message AddNumbersFromArrayResponse {
+	int32 Sum = 1;
+}
